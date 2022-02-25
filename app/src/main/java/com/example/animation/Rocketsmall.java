@@ -46,7 +46,7 @@ public class Rocketsmall extends AppCompatActivity {
         });
 
         buttonNextAnimation.setOnClickListener(v -> {
-            Intent intent = new Intent(this,Rocketsmall.class);
+            Intent intent = new Intent(Rocketsmall.this,Spaceship.class);
             startActivity(intent);
         });
     }
