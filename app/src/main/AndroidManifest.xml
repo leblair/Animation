@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Animation">
         <activity
+            android:name=".Spaceship"
+            android:exported="false" />
+        <activity
             android:name=".Rocketsmall"
             android:exported="false" />
         <activity

@@ -1,36 +1,34 @@
 package com.example.animation;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.text.DecimalFormat;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class MainActivity extends AppCompatActivity {
+public class Spaceship extends AppCompatActivity {
     AnimationDrawable animationDrawable;
     ImageView imageView;
-    Button buttonAnimation, buttonNextAnimation;
+    Button buttonAnimation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        imageView = findViewById(R.id.imageView);
-        buttonAnimation = findViewById(R.id.buttonAnimation);
-        buttonNextAnimation = findViewById(R.id.next);
+        setContentView(R.layout.activity_spaceship);
+
+        imageView = findViewById(R.id.imageView3);
+        buttonAnimation = findViewById(R.id.buttonspaceship);
 
         animationDrawable = new AnimationDrawable();
-        DecimalFormat df = new DecimalFormat("00");
-        for (int i = 1; i < 30; i++) {
-            animationDrawable.addFrame(ResourcesCompat.getDrawable(getResources(), getResources().getIdentifier("baymax" + df.format(i), "drawable", getPackageName()), null), 40);
+        //DecimalFormat df = new DecimalFormat("00");
+        for (int i = 1; i < 225; i++) {
+            animationDrawable.addFrame(ResourcesCompat.getDrawable(getResources(), getResources().getIdentifier("spaceship" + i, "drawable", getPackageName()), null), 40);
         }
         animationDrawable.setOneShot(false);
         imageView.setImageDrawable(animationDrawable);
@@ -45,10 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonNextAnimation.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this,Rocketsmall.class);
-            startActivity(intent);
-        });
 
     }
 }
