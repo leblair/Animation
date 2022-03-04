@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonNextAnimation.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this,Rocketsmall.class);
+            Intent intent = new Intent(getApplicationContext(),Rocketsmall.class);
             startActivity(intent);
         });
 

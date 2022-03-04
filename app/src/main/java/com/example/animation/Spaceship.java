@@ -27,7 +27,7 @@ public class Spaceship extends AppCompatActivity {
 
         animationDrawable = new AnimationDrawable();
         //DecimalFormat df = new DecimalFormat("00");
-        for (int i = 1; i < 225; i++) {
+        for (int i = 1; i <= 225; i++) {
             animationDrawable.addFrame(ResourcesCompat.getDrawable(getResources(), getResources().getIdentifier("spaceship" + i, "drawable", getPackageName()), null), 40);
         }
         animationDrawable.setOneShot(false);

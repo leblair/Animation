@@ -23,17 +23,18 @@ public class Rocketsmall extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rocketsmall);
 
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.imageView2);
         buttonAnimation = findViewById(R.id.buttonrocket);
         buttonNextAnimation = findViewById(R.id.next2);
 
         animationDrawable = new AnimationDrawable();
         //DecimalFormat df = new DecimalFormat("00");
-        for (int i = 17; i < 167; i++) {
+        for (int i = 17; i <= 167; i++) {
             animationDrawable.addFrame(ResourcesCompat.getDrawable(getResources(), getResources().getIdentifier("rocket" + i, "drawable", getPackageName()), null), 40);
         }
         animationDrawable.setOneShot(false);
         imageView.setImageDrawable(animationDrawable);
+
         AtomicBoolean var = new AtomicBoolean(true);
         buttonAnimation.setOnClickListener(v -> {
             if (var.get()) {
@@ -46,7 +47,7 @@ public class Rocketsmall extends AppCompatActivity {
         });
 
         buttonNextAnimation.setOnClickListener(v -> {
-            Intent intent = new Intent(Rocketsmall.this,Spaceship.class);
+            Intent intent = new Intent(getApplicationContext(),Spaceship.class);
             startActivity(intent);
         });
     }
